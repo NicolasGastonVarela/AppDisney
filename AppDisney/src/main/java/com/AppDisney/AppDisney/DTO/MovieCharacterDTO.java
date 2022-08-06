@@ -1,25 +1,13 @@
-package com.AppDisney.AppDisney.Model;
+package com.AppDisney.AppDisney.DTO;
 
-import javax.persistence.*;
+public class MovieCharacterDTO {
 
-@Entity
-@Table(name = "movieCharacter", uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})})
-public class Character {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "image",nullable = false)
     private String image;
-    @Column(name = "name",nullable = false)
     private String name;
-    @Column(name = "age",nullable = false)
     private int age;
-    @Column(name = "weight",nullable = false)
     private int weight;
-    @Column(name = "history",nullable = false)
     private String history;
-    @Column(name = "relatedMovies",nullable = false)
     private String relatedMovies;
 
     public long getId() {
@@ -78,10 +66,10 @@ public class Character {
         this.relatedMovies = relatedMovies;
     }
 
-    public Character() {
+    public MovieCharacterDTO() {
     }
 
-    public Character(long id, String image, String name, int age, int weight, String history, String relatedMovies) {
+    public MovieCharacterDTO(long id, String image, String name, int age, int weight, String history, String relatedMovies) {
         this.id = id;
         this.image = image;
         this.name = name;

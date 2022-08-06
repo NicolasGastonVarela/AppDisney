@@ -1,4 +1,7 @@
 package com.AppDisney.AppDisney.Repository;
 
-public interface MovieRepository {
+import com.AppDisney.AppDisney.Model.Movie;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MovieRepository extends JpaRepository<Movie, Long> {
 }
