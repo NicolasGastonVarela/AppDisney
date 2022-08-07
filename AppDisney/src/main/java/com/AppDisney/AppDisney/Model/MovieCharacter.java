@@ -9,17 +9,15 @@ public class MovieCharacter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "image",nullable = false)
+
     private String image;
-    @Column(name = "name",nullable = false)
+
     private String name;
-    @Column(name = "age",nullable = false)
+
     private int age;
-    @Column(name = "weight",nullable = false)
+
     private int weight;
-    @Column(name = "history",nullable = false)
     private String history;
-    @Column(name = "relatedMovies",nullable = false)
     private String relatedMovies;
 
     public long getId() {
