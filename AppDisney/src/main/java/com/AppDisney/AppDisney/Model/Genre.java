@@ -9,11 +9,8 @@ public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "name",nullable = false)
     private String name;
-    @Column(name = "image",nullable = false)
     private String image;
-    @Column(name = "relatedMovies",nullable = false)
     private String relatedMovies;
 
     public long getId() {

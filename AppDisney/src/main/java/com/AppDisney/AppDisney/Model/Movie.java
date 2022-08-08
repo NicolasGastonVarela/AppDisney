@@ -9,15 +9,10 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "image",nullable = false)
     private String image;
-    @Column(name = "title",nullable = false)
     private String title;
-    @Column(name = "creationDate",nullable = false)
     private int creationDate;
-    @Column(name = "calification",nullable = false)
     private int calification;
-    @Column(name = "relatedCharacters",nullable = false)
     private String relatedCharacters;
 
     public long getId() {

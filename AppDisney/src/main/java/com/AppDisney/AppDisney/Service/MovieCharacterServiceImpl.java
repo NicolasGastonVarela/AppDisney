@@ -17,14 +17,6 @@ public class MovieCharacterServiceImpl implements MovieCharacterService{
     private MovieCharacterRepository movieCharacterRepository;
 
     @Override
-    public MovieCharacterDTO createMovieCharacter(MovieCharacterDTO movieCharacterDTO) {
-        MovieCharacter movieCharacter = entityMapping(movieCharacterDTO);
-        MovieCharacter movieCharacter1 = movieCharacterRepository.save(movieCharacter);
-        MovieCharacterDTO movieCharacterResponse = dtoMapping(movieCharacter1);
-        return movieCharacterResponse;
-    }
-
-    @Override
     public List<MovieCharacterDTO> getAllMovieCharacters() {
         List<MovieCharacter> movieCharacters = movieCharacterRepository.findAll();
         return movieCharacters.stream().map(movieCharacter -> dtoMapping(movieCharacter)).collect(Collectors.toList());
@@ -34,6 +26,14 @@ public class MovieCharacterServiceImpl implements MovieCharacterService{
     public MovieCharacterDTO getMovieCharacterById(Long id) {
         MovieCharacter movieCharacter = movieCharacterRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("MovieCharacter", "id", id));
         return dtoMapping(movieCharacter);
+    }
+
+    @Override
+    public MovieCharacterDTO createMovieCharacter(MovieCharacterDTO movieCharacterDTO) {
+        MovieCharacter movieCharacter = entityMapping(movieCharacterDTO);
+        MovieCharacter movieCharacter1 = movieCharacterRepository.save(movieCharacter);
+        MovieCharacterDTO movieCharacterResponse = dtoMapping(movieCharacter1);
+        return movieCharacterResponse;
     }
 
     @Override

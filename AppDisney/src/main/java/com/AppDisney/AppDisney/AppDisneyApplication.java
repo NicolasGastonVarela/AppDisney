@@ -15,10 +15,8 @@ public class AppDisneyApplication {
 //TO DO
 
 //GET /characters?name=nombre, GET /characters?age=edad, GET /characters?movies=idMovie en moviecharacter
-//CRUD en movies
 // GET /movies?name=nombre /movies?genre=idGenero /movies?order=ASC | DESC
 // agregar/remover personajes a una película: POST /movies/{idMovie}/characters/{idCharacter} DELETE /movies/{idMovie}/characters/{idCharacter}
-//POST genre
 
 //Autenticacion: registro y login para obtener token: /auth/login /auth/register
 
