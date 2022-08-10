@@ -1,9 +1,6 @@
 package com.AppDisney.AppDisney.Model;
 
-import org.springframework.security.core.GrantedAuthority;
-
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,8 +19,7 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id")
             ,inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-    private Set<Role> roles = new HashSet<>();
-
+    private Set<Role> roleSet = new HashSet<>();
 
     public long getId() {
         return id;
@@ -65,24 +61,11 @@ public class User {
         this.password = password;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public Set<Role> getRoleSet() {
+        return roleSet;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setRoleSet(Set<Role> roleSet) {
+        this.roleSet = roleSet;
     }
-
-    public User(long id, String name, String username, String email, String password, Set<Role> roles) {
-        this.id = id;
-        this.name = name;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.roles = roles;
-    }
-
-    public User() {
-    }
-
 }
