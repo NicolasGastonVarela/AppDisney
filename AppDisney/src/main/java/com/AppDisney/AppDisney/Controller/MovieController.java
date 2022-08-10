@@ -5,6 +5,7 @@ import com.AppDisney.AppDisney.Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,18 +27,20 @@ public class MovieController {
         return ResponseEntity.ok(movieService.getMovieById(id));
     }
 
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/savemovies")
     public ResponseEntity<MovieDTO> saveMovie(@RequestBody MovieDTO movieDTO){
         return new ResponseEntity<>(movieService.createMovie(movieDTO), HttpStatus.CREATED);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<MovieDTO> updateMovie(@RequestBody MovieDTO movieDTO, @PathVariable(name = "id") long id) {
         MovieDTO movieResponse = movieService.updateMovie(movieDTO, id);
         return new ResponseEntity<>(movieResponse, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteMovie(@PathVariable(name = "id") long id){
         movieService.deleteMovie(id);

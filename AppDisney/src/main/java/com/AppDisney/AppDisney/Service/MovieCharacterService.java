@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface MovieCharacterService {
 
-    MovieCharacterDTO createMovieCharacter(MovieCharacterDTO movieCharacterDTO);
-
     List<MovieCharacterDTO> getAllMovieCharacters();
 
     MovieCharacterDTO getMovieCharacterById(Long id);
+
+    MovieCharacterDTO createMovieCharacter(MovieCharacterDTO movieCharacterDTO);
 
     MovieCharacterDTO updateMovieCharacter(MovieCharacterDTO movieCharacterDTO, long id);
 
