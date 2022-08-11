@@ -1,6 +1,8 @@
 package com.AppDisney.AppDisney.Configuration;
 
 import com.AppDisney.AppDisney.Security.CustomUserDetailsService;
+import com.AppDisney.AppDisney.Security.JwtAuthenticationEntryPoint;
+import com.AppDisney.AppDisney.Security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +23,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
+
+    @Autowired
+    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+
+    @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter(){
+        return new JwtAuthenticationFilter();
+    }
 
     @Bean
     PasswordEncoder passwordEncoder(){
