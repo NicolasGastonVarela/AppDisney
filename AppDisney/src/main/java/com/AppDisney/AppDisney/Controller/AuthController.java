@@ -60,8 +60,8 @@ public class AuthController {
         user.setEmail(registerDTO.getEmail());
         user.setPassword(passwordEncoder.encode(registerDTO.getPassword()));
 
-        //Role role = roleRepository.findByName("ROLE_ADMIN").get();
-        //user.setRoleSet(Collections.singleton(role));
+        Role role = roleRepository.findByName("ROLE_ADMIN").get();
+        user.setRoleSet(Collections.singleton(role));
 
         userRepository.save(user);
 
