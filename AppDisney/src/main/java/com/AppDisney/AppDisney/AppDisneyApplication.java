@@ -14,20 +14,18 @@ public class AppDisneyApplication {
 
 //TO DO
 
-//GET /characters?name=nombre, GET /characters?age=edad, GET /characters?movies=idMovie en moviecharacter
-// GET /movies?name=nombre /movies?genre=idGenero /movies?order=ASC | DESC
-// agregar/remover personajes a una película: POST /movies/{idMovie}/characters/{idCharacter} DELETE /movies/{idMovie}/characters/{idCharacter}
+//1GET /characters?name=nombre, GET /characters?age=edad, GET /characters?movies=idMovie en moviecharacter
+// 1GET /movies?name=nombre /movies?genre=idGenero /movies?order=ASC | DESC
+// 1agregar/remover personajes a una película: POST /movies/{idMovie}/characters/{idCharacter} DELETE /movies/{idMovie}/characters/{idCharacter}
 
-//Autenticacion: registro y login para obtener token: /auth/login /auth/register
+//2Envio de mails: Al registrarse en el sitio, el usuario deberá recibir un email de bienvenida. Es
+//2recomendable, la utilización de algún servicio de terceros como SendGrid
 
-//Envio de mails: Al registrarse en el sitio, el usuario deberá recibir un email de bienvenida. Es
-//recomendable, la utilización de algún servicio de terceros como SendGrid
+//3Documentar los endpoints con postman
 
-//Documentar los endpoints con postman
-
-//Tests
-//De forma opcional, se podrán agregar tests de los diferentes endpoints de la APP,
-//verificando posibles escenarios de error:
-//- Campos faltantes o con un formato inválido en BODY de las peticiones
-//- Acceso a recursos inexistentes en endpoints de detalle
-//Los tests pueden realizarse utilizando JUnit y Mockito
+//4Tests
+//4De forma opcional, se podrán agregar tests de los diferentes endpoints de la APP,
+//4verificando posibles escenarios de error:
+//4- Campos faltantes o con un formato inválido en BODY de las peticiones
+//4- Acceso a recursos inexistentes en endpoints de detalle
+//4Los tests pueden realizarse utilizando JUnit y Mockito

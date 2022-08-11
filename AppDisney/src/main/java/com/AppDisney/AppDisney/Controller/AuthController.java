@@ -6,6 +6,8 @@ import com.AppDisney.AppDisney.Model.Role;
 import com.AppDisney.AppDisney.Model.User;
 import com.AppDisney.AppDisney.Repository.RoleRepository;
 import com.AppDisney.AppDisney.Repository.UserRepository;
+import com.AppDisney.AppDisney.Security.JWTAuthResponseDTO;
+import com.AppDisney.AppDisney.Security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,12 +39,20 @@ public class AuthController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private JwtTokenProvider jwtTokenProvider;
+
     @PostMapping("/login")
-    public ResponseEntity<String> authenticateUser(@RequestBody LoginDTO loginDTO){
+    public ResponseEntity<JWTAuthResponseDTO> authenticateUser(@RequestBody LoginDTO loginDTO){
         Authentication authentication =authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getUsernameOrEmail(), loginDTO.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return new ResponseEntity<>("Ha iniciado sesion con exito", HttpStatus.OK);
+
+        //obtenemos el token de jwtTokenProvider
+        String token = jwtTokenProvider.generateToken(authentication);
+        return ResponseEntity.ok(new JWTAuthResponseDTO(token));
+
+        //return new ResponseEntity<>("Ha iniciado sesion con exito", HttpStatus.OK);
     }
 
     @PostMapping("/register")
