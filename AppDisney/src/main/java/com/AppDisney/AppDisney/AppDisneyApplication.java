@@ -14,6 +14,8 @@ public class AppDisneyApplication {
 
 //TO DO
 
+//chequear lo que salte del video
+
 //1GET /characters?name=nombre, GET /characters?age=edad, GET /characters?movies=idMovie en moviecharacter
 // 1GET /movies?name=nombre /movies?genre=idGenero /movies?order=ASC | DESC
 // 1agregar/remover personajes a una película: POST /movies/{idMovie}/characters/{idCharacter} DELETE /movies/{idMovie}/characters/{idCharacter}
