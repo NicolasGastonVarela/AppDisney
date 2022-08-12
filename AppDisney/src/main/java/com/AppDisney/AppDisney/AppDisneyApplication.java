@@ -1,5 +1,7 @@
 package com.AppDisney.AppDisney;
 
+import com.AppDisney.AppDisney.Email.EmailController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,14 +16,10 @@ public class AppDisneyApplication {
 
 //TO DO
 
-//chequear lo que salte del video
-
 //1GET /characters?name=nombre, GET /characters?age=edad, GET /characters?movies=idMovie en moviecharacter
 // 1GET /movies?name=nombre /movies?genre=idGenero /movies?order=ASC | DESC
 // 1agregar/remover personajes a una película: POST /movies/{idMovie}/characters/{idCharacter} DELETE /movies/{idMovie}/characters/{idCharacter}
 
-//2Envio de mails: Al registrarse en el sitio, el usuario deberá recibir un email de bienvenida. Es
-//2recomendable, la utilización de algún servicio de terceros como SendGrid
 
 //3Documentar los endpoints con postman
 
