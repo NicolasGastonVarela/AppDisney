@@ -2,7 +2,7 @@ package com.AppDisney.AppDisney.Model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "moviecharacters")
 @Table(name = "movieCharacter", uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})})
 public class MovieCharacter {
 
@@ -17,7 +17,9 @@ public class MovieCharacter {
     private int age;
 
     private int weight;
+
     private String history;
+
     private String relatedMovies;
 
     public long getId() {

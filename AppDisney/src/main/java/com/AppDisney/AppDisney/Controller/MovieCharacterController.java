@@ -18,15 +18,13 @@ public class MovieCharacterController {
     @Autowired
     MovieCharacterService movieCharacterService;
 
+    @Autowired
+    MovieCharacterRepository movieCharacterRepository;
+
     @GetMapping("/getcharacters")
     public List<MovieCharacterDTO> getMovieCharacters(){
         return movieCharacterService.getAllMovieCharacters();
     }
-
-    /*@GetMapping("?name=nombre")
-    public ResponseEntity <List<MovieCharacterDTO>> getCharactersByName(@RequestParam String name) {
-        return new ResponseEntity<List<MovieCharacterDTO>>(movieCharacterRepository.findByName(name), HttpStatus.OK);
-    }*/
 
     @GetMapping("/{id}")
     public ResponseEntity<MovieCharacterDTO> getMovieCharacterById(@PathVariable(name = "id") long id) {

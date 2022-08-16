@@ -30,7 +30,6 @@ public class GenreServiceImpl implements GenreService{
         return genreDTO;
     }
 
-    //Convierte de DTO a entidad
     private Genre entityMapping(GenreDTO genreDTO){
         Genre genre = new Genre();
         genre.setName(genreDTO.getName());

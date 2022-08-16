@@ -48,11 +48,8 @@ public class AuthController {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        //obtenemos el token de jwtTokenProvider
         String token = jwtTokenProvider.generateToken(authentication);
         return ResponseEntity.ok(new JWTAuthResponseDTO(token));
-
-        //return new ResponseEntity<>("Ha iniciado sesion con exito", HttpStatus.OK);
     }
 
     @PostMapping("/register")

@@ -54,7 +54,6 @@ public class MovieServiceImpl implements MovieService{
         movieRepository.delete(movie);
     }
 
-    //Convierte de entidad a DTO
     private MovieDTO dtoMapping(Movie movie){
         MovieDTO movieDTO = new MovieDTO();
         movieDTO.setId(movie.getId());
@@ -67,7 +66,6 @@ public class MovieServiceImpl implements MovieService{
         return movieDTO;
     }
 
-    //Convierte de DTO a entidad
     private Movie entityMapping(MovieDTO movieDTO){
         Movie movie = new Movie();
         movie.setTitle(movieDTO.getTitle());
